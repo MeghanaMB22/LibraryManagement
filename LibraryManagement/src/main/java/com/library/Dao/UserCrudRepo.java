@@ -5,7 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.library.Entity.User;
 
+//import com.library.Entity.User;
+
+//import com.library.Entity.User;
+
 @Repository
-public interface UserCrudRepo extends JpaRepository<User, Long> {
+public interface UserCrudRepo extends JpaRepository<User , Long>{
 
 }

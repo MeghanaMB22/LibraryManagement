@@ -12,6 +12,11 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+//import com.library.annotation.ISODate;
+
+//
+//import jakarta.validation.constraints.Pattern;
+
 @Entity
 @Table(name="tbl_user",
 		uniqueConstraints = @UniqueConstraint(
@@ -25,6 +30,7 @@ public class User {
 	private Long user_id;
 	private String user_fname; 
 	private String user_lname; 
+	//@Pattern(regexp = "admin|employee|manager", message="Invalid role specified!")
 	private String user_Role; 
 	@Column(nullable=false)
 	private String user_email;
@@ -64,10 +70,10 @@ public class User {
 	public void setUser_email(String user_email) {
 		this.user_email = user_email;
 	}
-	public String getJoining_date() {
+	public Date getJoining_date() {
 		return joining_date;
 	}
-	public void setJoining_date(String joining_date) {
+	public void setJoining_date(Date joining_date) {
 		this.joining_date = joining_date;
 	}
 	public String getLast_working_date() {
@@ -99,6 +105,13 @@ public class User {
 	}
 	public void setUpdated_by(String updated_by) {
 		Updated_by = updated_by;
+	}
+	@Override
+	public String toString() {
+		return "User [user_id=" + user_id + ", user_fname=" + user_fname + ", user_lname=" + user_lname + ", user_Role="
+				+ user_Role + ", user_email=" + user_email + ", joining_date=" + joining_date + ", Last_working_date="
+				+ Last_working_date + ", Created_date=" + Created_date + ", Created_by=" + Created_by
+				+ ", Updated_Date=" + Updated_Date + ", Updated_by=" + Updated_by + "]";
 	}
 	
 	
