@@ -6,17 +6,15 @@ import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.library.Dao.BookCrudRepo;
 //import com.dailycodebuffer.Springboot.tutorial.entity.Department;
 import com.library.Dao.UserCrudRepo;
-import com.library.Entity.Books;
 import com.library.Entity.User;
 @Service
-public class UserService implements UserServiceInterface{
+public class UserService implements UserServiceInterface {
 	@Autowired
 	private UserCrudRepo crudRepo;
-	@Autowired
-	private BookCrudRepo crudBooks;
+//	@Autowired
+//	private BookCrudRepo crudBooks;
 
 	@Override
 	public User addUser(User user) {
@@ -67,17 +65,17 @@ public class UserService implements UserServiceInterface{
 		return crudRepo.save(UserDB);
 	}
 
-	@Override
-	public Books addBook(Books book) {
-		Books savedBook=crudBooks.save(book);
-		return savedBook;
-	}
-
-	@Override
-	public List<Books> viewAllBooks() {
-		
-		return crudBooks.findAll();
-	}
-	
+//	@Override
+//	public Books addBook(Books book) {
+//		Books savedBook=crudBooks.save(book);
+//		return savedBook;
+//	}
+//
+//	@Override
+//	public List<Books> viewAllBooks() {
+//		
+//		return crudBooks.findAll();
+//	}
+//	
 	
 }
