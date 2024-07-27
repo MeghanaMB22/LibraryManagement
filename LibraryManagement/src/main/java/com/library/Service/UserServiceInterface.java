@@ -2,7 +2,6 @@ package com.library.Service;
 
 import java.util.List;
 
-import com.library.Entity.Books;
 import com.library.Entity.User;
 
 public interface UserServiceInterface {
@@ -17,9 +16,9 @@ public interface UserServiceInterface {
 
 	public User updateUser(Long user_id,User user);
 
-	public Books addBook(Books book);
-
-	public List<Books> viewAllBooks();
+//	public Books addBook(Books book);
+//
+//	public List<Books> viewAllBooks();
 
 	
 
