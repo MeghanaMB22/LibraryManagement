@@ -3,13 +3,19 @@ package com.library.Entity;
 
 import java.util.Date;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Table(name="tbl_book_details")
@@ -24,17 +30,15 @@ public class BookDetails {
 			strategy= GenerationType.SEQUENCE,
 			generator="b_details_sequence"
 			)
-	@Column(name = "bookDetails_id")
 	private Long bookDetails_id;		//Primary key
+	
+	
 
+	
 	//@ColumnDefault(value="available")//available or unavailable
-	@Column(name = "book_Status")
 	private String book_Status; 
 	
-	@Column(name = "Issued_by")
 	private String Issued_by; //Book issued by name
-	
-	@Column(name = "Issue_date")
 	private Date Issue_date;	//book issued date
 
 	

@@ -11,21 +11,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.library.Entity.Books;
 import com.library.Entity.User;
 import com.library.Service.UserServiceInterface;
 
 @RestController
-@RequestMapping("/api/library")
+
 public class UserController {
 	@Autowired
 	private UserServiceInterface userServiceInterface;
 	
-//	@Autowired
-//	private BookServiceInterface bookServiceInterface;
 	
 	//---------------Add Users--------------------------------------
 	@PostMapping("/users/add")
@@ -71,18 +69,17 @@ public class UserController {
 	
 	
 //	//-----------------------Add Book------------------------------------
-//	@PostMapping("/books/add")
-//	public ResponseEntity<Books> addBook(@RequestBody Books book){
-//		System.out.println("Inside Add Books");
-//		Books bookSaved= bookServiceInterface.addBook(book);
-//		return new ResponseEntity<Books>(bookSaved, HttpStatus.CREATED);		
-//	}
-//	
-//	@GetMapping("/books")
-//	public ResponseEntity<List<Books>> viewAllBooks(){
-//		System.out.println("Inside View All Books");
-//		List<Books> allBooks = bookServiceInterface.viewAllBooks(); 
-//		return new ResponseEntity<List<Books>>(allBooks, HttpStatus.OK);
-//	}
-
+	@PostMapping("/books/add")
+	public ResponseEntity<Books> addBook(@RequestBody Books book){
+		Books bookSaved= userServiceInterface.addBook(book);
+		return new ResponseEntity<Books>(bookSaved, HttpStatus.CREATED);		
+	}
+	
+	@GetMapping("/books")
+	public ResponseEntity<List<Books>> viewAllBooks(){
+		List<Books> allBooks = userServiceInterface.viewAllBooks(); 
+		return new ResponseEntity<List<Books>>(allBooks, HttpStatus.OK);
+	}
+	
+	
 }
