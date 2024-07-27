@@ -54,7 +54,7 @@ public class BookDetails {
 
 	private Date Release_date;   //when will book be released
 	
-	
+	public BookDetails() {}
 	
 	public BookDetails(Long bookDetails_id, String book_Status, String issued_by, Date issue_date, Date release_date) {
 	//super();

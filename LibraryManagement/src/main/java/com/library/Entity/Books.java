@@ -52,7 +52,9 @@ public class Books {
 	
 
 
-	
+	public Books() {
+		//Default Constructor
+	}
 
 	public Books(Long book_Id, BookDetails bookDetails, String book_Name, Date created_Date, String created_By) {
 	super();
